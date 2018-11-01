@@ -24,7 +24,10 @@
     width: 50%;
   }
   .event{
-    width: 70%;
+    width: 80%;
+  }
+  .event-imageContainer{
+    max-height: initial;
   }
   .contact {
     height: 40vh;
@@ -81,8 +84,8 @@
     display: block;
   }
   .event {
-    margin: 15px auto;
-    width: 70%
+    margin: 20px auto;
+    width: 80%
   }
   .blue-border {
     border-left: 14px solid #026fff;
@@ -182,8 +185,31 @@
     width: 100%;
   }
   .event {
+    margin: 10px auto;
+    width: 90%;
+    border-radius: 0;
+  }
+  .event-detail{
+    padding: 0;
+  }
+  .event-title {
+    font-size: 1.2em;
+    margin: 0;
+    padding: 0;
+    padding-top: 8px;
+  }
+  .event-url {
+    /* el border asimila el color del texto */
+    background: initial;
+    color: white;
+    font-weight: bolder;
+    padding: 0px 20px;
+    text-decoration: underline;
+    border: none;
+    font-size: 20px;
+    display: block;
     margin: 15px auto;
-    width: 90%
+    transition: all 250ms ease-in-out;
   }
   .contact {
     height: initial;
