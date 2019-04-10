@@ -136,16 +136,16 @@ body {
   top: 0;
   right: 0;
   left: 0;
-  padding: 1.5625em 1.30208333em;
+  padding: 1.875em 1.30208333em;
 }
 
 .project_title {
   text-transform: uppercase;
-  font-size: 1em;
+  font-size: 1.125em;
   font-weight: 500;
   color: white;
   z-index: 1;
-  letter-spacing: 0px;
+  letter-spacing: 0;
 }
 .project_image-wrapper {
   margin: 0;
@@ -163,18 +163,30 @@ body {
   padding: 60px 25px;
   transition: all 750ms ease-in-out;
 }
-.project_info-wrapper span {
+.project_info-wrapper .skills {
+  box-sizing: border-box;
+  margin: auto;
+  margin-top: 20px;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: start;
+}
+.project_info-wrapper .skills span {
   color: white;
-  font-size: 1em;
+  font-size: 20px;
+  background: #4881ad;
+  margin: 5px 4px;
+  padding: 7px;
+  border-radius: 5px;
   font-weight: lighter;
 }
 .project_info {
-  padding: 10px 0;
+  padding: 0.625em 0;
   margin: 0;
   font-weight: lighter;
   font-size: 0.95em;
   color: white;
-  line-height: 5px;
+  line-height: 27px;
 }
 /* This is a godd trick */
 .project:hover .project_info-wrapper {
@@ -211,8 +223,10 @@ body {
   .project_title {
     font-size: 1.2em;
   }
-  .project_title, .project_info-wrapper {
-    padding: 1.04166667em 0.78125em;
+  .project_info {
+    font-weight: lighter;
+    font-size: 1.0625em;
+    line-height: 30px;
   }
 }
 
@@ -244,12 +258,6 @@ body {
     width: 50%;
     margin: 0;
     box-sizing: inherit;
-  }
-  .project_title, .project_info-wrapper {
-    padding: 1.5625em 1.30208333em;
-  }
-  .project_title {
-    font-size: 1.1em;
   }
 }
 
@@ -318,10 +326,7 @@ body {
     width: 25%;
     max-width: 400px;
     box-sizing: inherit;
-    border-bottom: 1px solid #00000031;
-  }
-  .project_title {
-    font-size: 1.2em;
+    /* border-bottom: 1px solid #00000031; */
   }
 }
 
