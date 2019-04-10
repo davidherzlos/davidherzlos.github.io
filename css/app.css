@@ -118,7 +118,8 @@ body {
 }
 .project {
   margin: 0 auto;
-  width: 90%;
+  width: 100%;
+  position: relative;
   box-sizing: inherit;
   opacity: 1;
   animation: 750ms ease-out 0s 1 scaleProject;
@@ -130,15 +131,6 @@ body {
   position: relative;
   font-family: 'K2D', sans-serif;
 }
-.project_title, .project_info-wrapper {
-  margin: 0;
-  position: absolute;
-  top: 0;
-  right: 0;
-  left: 0;
-  padding: 1.875em 1.30208333em;
-}
-
 .project_title {
   text-transform: uppercase;
   font-size: 1.125em;
@@ -146,6 +138,14 @@ body {
   color: white;
   z-index: 1;
   letter-spacing: 0;
+}
+.project_title, .project_info-wrapper {
+  margin: 0;
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  padding: 1.875em 1.30208333em;
 }
 .project_image-wrapper {
   margin: 0;
@@ -160,39 +160,59 @@ body {
   background: black;
   bottom: 0;
   opacity: 0;
-  padding: 60px 25px;
+  padding: 3.4375em 1.30208333em;
   transition: all 750ms ease-in-out;
-}
-.project_info-wrapper .skills {
-  box-sizing: border-box;
-  margin: auto;
-  margin-top: 20px;
-  display: flex;
-  flex-flow: row wrap;
-  justify-content: start;
-}
-.project_info-wrapper .skills span {
-  color: white;
-  font-size: 20px;
-  background: #4881ad;
-  margin: 5px 4px;
-  padding: 7px;
-  border-radius: 5px;
-  font-weight: lighter;
 }
 .project_info {
   padding: 0.625em 0;
   margin: 0;
   font-weight: lighter;
-  font-size: 0.95em;
+  font-size: 1.125em;
   color: white;
-  line-height: 27px;
+  line-height: 1.388888889em;
 }
+.project-skills {
+  box-sizing: border-box;
+  flex-flow: row wrap;
+  display: flex;
+  justify-content: flex-end;
+}
+.project-skills span {
+  color: white;
+  font-size: 1em;
+  background: #D78D20;
+  margin: 0.125em;
+  padding: 0.25em 0.4375em;
+  border-radius: 2px;
+  font-family: system-ui;
+}
+.project-button {
+  cursor: pointer;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  box-sizing: border-box;
+  background: rgba(72, 151, 212, 0.83);
+  display: none;
+  padding: 20px;
+  border: none;
+}
+.project-button a {
+  color: white;
+  font-size: 22px;
+  text-decoration: none;
+}
+
 /* This is a godd trick */
 .project:hover .project_info-wrapper {
   background: rgba(0, 0, 0, 0.700);
   bottom: 0;
   opacity: 1;
+}
+.project:hover .project-button {
+  display: block;
 }
 .projects_more-button-container {
   text-align: center;
@@ -208,9 +228,6 @@ body {
   font-weight: 400;
   transition: all 500ms ease-in-out; 
 }
-.projects_more-button:hover {
-  
-}
 
 /*------------------------------------*\
   #MEDIA-QUERYS
@@ -221,12 +238,20 @@ body {
     max-width: 450px;
   }
   .project_title {
-    font-size: 1.2em;
+    font-size: 1.25em;
+  }
+  .project_info-wrapper {
+    padding: 3.75em 1.5625em;
   }
   .project_info {
     font-weight: lighter;
-    font-size: 1.0625em;
-    line-height: 30px;
+    font-size: 1.25em;
+    line-height: 1.4em;
+  }
+  .project-skills span {
+    font-size: 1em;
+    margin: 0.3125em;
+    padding: 0.5em 0.4375em;
   }
 }
 
@@ -258,6 +283,19 @@ body {
     width: 50%;
     margin: 0;
     box-sizing: inherit;
+  }
+  .project_title {
+    font-size: 1.120em;
+  }
+  .project_info-wrapper {
+    padding: 3.4375em 1.30208333em;
+  }
+  .project_info {
+    font-size: 1.125em;
+    line-height: 1.4em;
+  }
+  .project-skills {
+    display: none;
   }
 }
 

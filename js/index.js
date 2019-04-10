@@ -20,56 +20,56 @@
   const projectsData = [
     {
       'title': 'Formación Integral',
-      'description': `Sharing items with Ration is super easy. Take a picture of stuff you don't want to take up space in your home, but still kinda want to keep in case you need it someday. Then, if a friend needs it, they'll come get it!`,
+      'description': `Sharing items with Ration is super easy. Take a picture of stuff you don't want to take up space in your home, but still kinda want to keep in case you need it someday.`,
       'url': 'http://formacionintegral.unadmexico.mx/FI',
       'cover': './static/fi.png',
       'tags': ['PHP', 'CSS3', 'Javascript', 'Moodle', 'Linux']
     },
     {
       'title': 'Ration IO App',
-      'description': `Sharing items with Ration is super easy. Take a picture of stuff you don't want to take up space in your home, but still kinda want to keep in case you need it someday. Then, if a friend needs it, they'll come get it!`,
+      'description': `Sharing items with Ration is super easy. Take a picture of stuff you don't want to take up space in your home, but still kinda want to keep in case you need it someday.`,
       'url': 'https://ration.io',
       'cover': './static/ration.png',
-      'tags': ['Sails.js', 'APIS', 'Stripe', 'Mailgun', 'Bootstrap', 'EJS', 'Heroku']
+      'tags': ['Sails.js', 'APIS', 'Bootstrap', 'EJS', 'Heroku']
     },
     {
       'title': 'Podcasts App',
-      'description': `Sharing items with Ration is super easy. Take a picture of stuff you don't want to take up space in your home, but still kinda want to keep in case you need it someday. Then, if a friend needs it, they'll come get it!`,
+      'description': `Sharing items with Ration is super easy. Take a picture of stuff you don't want to take up space in your home, but still kinda want to keep in case you need it someday.`,
       'url': 'https://davidherzlos-podcasts-smbzjpwwtj.now.sh',
       'cover': './static/podcasts.png',
       'tags': ['APIS', 'React', 'Next.Js', 'CSS Grids', 'Now.sh']
     },
     {
-      'title': 'Repositorio Institucional UnADM',
-      'description': `Sharing items with Ration is super easy. Take a picture of stuff you don't want to take up space in your home, but still kinda want to keep in case you need it someday. Then, if a friend needs it, they'll come get it!`,
-      'url': 'http://www.repositorio.unadmexico.mx:8080',
+      'title': 'RI UnADM',
+      'description': `Sharing items with Ration is super easy. Take a picture of stuff you don't want to take up space in your home, but still kinda want to keep in case you need it someday.`,
+      'url': 'http://www.repositorio.unadmexico.mx:8080/jspui',
       'cover': './static/ri-unadm.png',
       'tags': ['Html5', 'Dspace', 'Linux', 'CSS', 'PostgreSQL']
     },
     {
       'title': 'Canon Demo Platform',
-      'description': `Sharing items with Ration is super easy. Take a picture of stuff you don't want to take up space in your home, but still kinda want to keep in case you need it someday. Then, if a friend needs it, they'll come get it!`,
+      'description': `Sharing items with Ration is super easy. Take a picture of stuff you don't want to take up space in your home, but still kinda want to keep in case you need it someday.`,
       'url': 'http://52.204.73.6',
       'cover': './static/canon-demo.png',
       'tags': ['PHP', 'CSS3', 'Javascript', 'Moodle', 'Linux']
     },
     {
       'title': 'Unaq Virtual',
-      'description': `Sharing items with Ration is super easy. Take a picture of stuff you don't want to take up space in your home, but still kinda want to keep in case you need it someday. Then, if a friend needs it, they'll come get it!`,
+      'description': `Sharing items with Ration is super easy. Take a picture of stuff you don't want to take up space in your home, but still kinda want to keep in case you need it someday.`,
       'url': 'http://unaq.mrooms.net',
       'cover': './static/unaq.png',
       'tags': ['PHP', 'CSS3', 'Jquery', 'Linux']
     },
     {
       'title': 'Expensy App',
-      'description': `Sharing items with Ration is super easy. Take a picture of stuff you don't want to take up space in your home, but still kinda want to keep in case you need it someday. Then, if a friend needs it, they'll come get it!`,
+      'description': `Sharing items with Ration is super easy. Take a picture of stuff you don't want to take up space in your home, but still kinda want to keep in case you need it someday.`,
       'url': 'http://expensy-davidherzlos.herokuapp.com',
       'cover': './static/expensy.png',
       'tags': ['PHP', 'Laravel', 'Bootstrap', 'Heroku']
     },
     {
       'title': 'Page Speed Insights',
-      'description': `Sharing items with Ration is super easy. Take a picture of stuff you don't want to take up space in your home, but still kinda want to keep in case you need it someday. Then, if a friend needs it, they'll come get it!`,
+      'description': `Sharing items with Ration is super easy. Take a picture of stuff you don't want to take up space in your home, but still kinda want to keep in case you need it someday.`,
       'url': 'https://davidherzlos.github.io/page-speed-insights',
       'cover': './static/page-speed.png',
       'tags': ['HTML5', 'CSS', 'Javascript']
@@ -79,18 +79,24 @@
   const projectTemplate = function(project) {
     return (`
     <article class="project">
-      <a class="project_link-container" href="${project.url}">
+      <a class="project_link-container">
         <h1 class="project_title">${project.title}</h1>
         <figure class="project_image-wrapper">
           <img class="project_image" src="${project.cover}" alt="${project.title}">
           <figcaption class="project_info-wrapper">
             <p class="project_info">${project.description}</p>
-            <div class="skills">
-              ${project.tags.map(tag => '<span>' + tag + '</span>').join('')}
+            <div class="project-skills">
+            ${project.tags.map(tag => '<span>' + tag + '</span>').join('')}
             </div>
           </figcaption>
         </figure>
       </a>
+      <button class="project-button">
+        <a href="${project.url}">
+          View project
+            <i class="fas fa-external-link-alt"></i>
+        </a>
+      </button>
     </article>`);
   }
 
