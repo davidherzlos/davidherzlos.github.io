@@ -68,9 +68,9 @@
       'tags': ['PHP', 'Laravel', 'Bootstrap', 'Heroku']
     },
     {
-      'title': 'Page Speed Insights',
+      'title': 'Gatornito',
       'description': `Sharing items with Ration is super easy. Take a picture of stuff you don't want to take up space in your home, but still kinda want to keep in case you need it someday.`,
-      'url': 'https://davidherzlos.github.io/page-speed-insights',
+      'url': 'https://davidherzlos.github.io/gatornito/',
       'cover': './static/page-speed.png',
       'tags': ['HTML5', 'CSS', 'Javascript']
     }
