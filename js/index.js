@@ -91,12 +91,12 @@
           </figcaption>
         </figure>
       </a>
-      <button class="project-button">
+      <div class="project-button">
         <a href="${project.url}">
           View project
             <i class="fas fa-external-link-alt"></i>
         </a>
-      </button>
+      </div>
     </article>`);
   }
 

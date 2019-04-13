@@ -182,6 +182,7 @@ body {
   font-family: system-ui;
 }
 .project-button {
+  text-align: center;
   cursor: pointer;
   position: absolute;
   bottom: 0;
@@ -192,7 +193,6 @@ body {
   background: rgba(72, 151, 212, 0.83);
   display: none;
   padding: 20px;
-  border: none;
 }
 .project-button a {
   color: white;
