@@ -19,6 +19,13 @@
   // Projects section
   const projectsData = [
     {
+      'title': 'Instituto Rosario Castellanos',
+      'description': 'Aula Virtual del Instituto de Estudios Superiores Rosario Castellanos. Uno de los proyectos educativos mas ambiciosos de la CDMX desde la creación de la Universidad Autónoma de la Ciudad de México',
+      'url': 'http://189.240.71.205/piirc/',
+      'cover': './static/iesrc.png',
+      'tags': ['PHP', 'CSS3', 'Javascript', 'Moodle', 'Linux']
+    },
+    {
       'title': 'Formación Integral',
       'description': 'Si estudias en la Universidad Abierta y a Distancia de México (UnADM), puedes beneficiarte de su catálogo de cursos gratuitos de Formación Contínua. Los temas van desde Técnicas y Estrategias de Lectura, hasta la Equidad de Género y Construcción Ciudadana.',
       'url': 'http://formacionintegral.unadmexico.mx/FI',
