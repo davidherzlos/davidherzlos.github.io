@@ -15,8 +15,11 @@
       // create html elements
       // insert elements in container
 
+  // TODO:
+  // Implement animated anchor linking
 
-  // Projects section
+
+  // Data
   const projectsData = [
     {
       'title': 'Instituto Rosario Castellanos',
@@ -81,100 +84,99 @@
       'cover': './static/gatornito.png',
       'tags': ['HTML5', 'CSS', 'Javascript']
     }
-  ];
+  ]
 
+  // Library functions
   const projectTemplate = function(project) {
     return (`
-    <article class="project">
-      <a class="project_link-container">
+    <article class="project" aria-label="interactive flipping card on mouse over" aria-hidden="false">
+      <div class="project_link-container">
         <h1 class="project_title">${project.title}</h1>
         <figure class="project_image-wrapper">
-          <img class="project_image" src="${project.cover}" alt="${project.title}">
-          <figcaption class="project_info-wrapper">
+          <img class="project_image" src="${project.cover}" alt="${project.title}" title="${project.title}">
+          <figcaption class="project_info-wrapper" title="${project.title}">
             <p class="project_info">${project.description}</p>
             <div class="project-skills">
-            ${project.tags.map(tag => '<span>' + tag + '</span>').join('')}
+              ${project.tags.map(tag => '<span>' + tag + '</span>').join('')}
             </div>
           </figcaption>
         </figure>
-      </a>
+      </div>
       <div class="project-button">
-        <a href="${project.url}">
+        <a href="${project.url}" title="Go to project ${project.title}" rel="external">
           View project
-            <i class="fas fa-external-link-alt"></i>
+          <i class="fas fa-external-link-alt"></i>
         </a>
       </div>
-    </article>`);
+    </article>`)
   }
 
   const createIterator = function*(data){
     for (const item of data) {
-      yield item;
+      yield item
     }
   }
 
-  // Aka compose function
+  // A new function composition
   const renderer = function (formatFn, insertFn) {
     return function(list){
-      insertFn(formatFn(list));
+      insertFn(formatFn(list))
     }
   }
 
   const htmlElements = function(template){
     return function(list){
-      return list.map( object => template(object) );
+      return list.map( object => template(object) )
     }
   }
 
   const addToDoom = async function (selector, position) {
-    $container = document.querySelector(selector);
+    $container = document.querySelector(selector)
     return (htmlChilds) => {
       htmlChilds.forEach(function (child) {
-        $container.insertAdjacentHTML(position, child);
-      });
+        $container.insertAdjacentHTML(position, child)
+      })
     }
-  };
+  }
 
   const loadProjects = function (amount, iterator, renderer) {
-    const projectList = getFromIterator(amount, iterator);
-    renderer(projectList);
+    const projectList = getFromIterator(amount, iterator)
+    renderer(projectList)
   }
 
   const getFromIterator = function(amount, iteratorObject){
-    var items = [];
+    var items = []
     for (let idx = 0; idx < amount; idx++) {
-      items.push(iteratorObject.next().value);
+      items.push(iteratorObject.next().value)
     }
-    return items;
+    return items
   }
 
   const debounce = (func, delay) => {
-    let inDebounce;
+    let inDebounce
     return function() {
-      const context = this;
-      const args = arguments;
-      clearTimeout(inDebounce);
+      const context = this
+      const args = arguments
+      clearTimeout(inDebounce)
       inDebounce = setTimeout( () => (
         func.apply(context, args), delay
         ))
     }
   }
 
-
-  const projectsSource = createIterator(projectsData);
-
+  // Scripting
+  const projectsSource = createIterator(projectsData)
   const projectsRenderer = renderer(
-    htmlElements(projectTemplate),
-    await addToDoom('.projects', 'beforeend'));
+    htmlElements(projectTemplate), 
+    await addToDoom('.projects', 'beforeend') // Use the id instead of the class
+    )
 
-  loadProjects(4, projectsSource, projectsRenderer);
+  loadProjects(4, projectsSource, projectsRenderer)
+  const loadMoreProjects = debounce(loadProjects, 100)
 
-
-  loadMoreProjects = debounce(loadProjects, 100);
-
-  const $loadProjectsButton = document.querySelector('.projects_more-button');
-  $loadProjectsButton.addEventListener('click', function(event){
-    event.preventDefault();
-    loadMoreProjects(4, projectsSource, projectsRenderer);
-  });
-}());
+  let $viewmore = document.querySelector('.view-more-button')
+  $viewmore.addEventListener('click', function(event){
+    event.preventDefault()
+    loadMoreProjects(4, projectsSource, projectsRenderer)
+  })
+}())

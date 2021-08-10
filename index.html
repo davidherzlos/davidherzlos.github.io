@@ -4,52 +4,52 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>@davidherzlos</title>
+  <title>@davidherzlos, Developer</title>
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
   <link href="https://fonts.googleapis.com/css?family=K2D:300,400|Patua+One" rel="stylesheet">
   <link rel="stylesheet" href="./css/app.css">
 </head>
 <body>
-  <header class="header">
+  <header class="header">   
     <div class="logo">
-      <div class="logo_image-wrapper">
-        <a href="/">
-          <figure class="logo_image-container">
-            <img src="./static/me.png" alt="" class="logo_image">
+      <div class="image-container">
+        <a href="/" target="_top" rel="nofollow" aria-label="Home link">
+          <figure>
+            <img class="dev-picture" src="./static/me.png" alt="David's picture" title="David's picture">
+            <figcaption>Profile picture</figcaption>
           </figure>
         </a>
-        <a href="https://dev.to/davidherzlos">
-          <img src="https://d2fltix0v2e0sb.cloudfront.net/dev-badge.svg" alt="David O.C.'s DEV Profile" height="30" width="30" />
+        <a href="https://dev.to/davidherzlos" target="_blank" rel="external">
+          <img src="https://d2fltix0v2e0sb.cloudfront.net/dev-badge.svg" alt="David's dev.to profile" title="David's dev.to profile" height="30" width="30" />
         </a>
       </div>
-      <div class="logo_name">
+      <aside class="dev-name">
         <h1>
           David Ordoñez
         </h1>
-        <div>
-          <span class="logo_keywords">
-            <em>E-learning</em> | <em>FullStack Dev</em> | <em>Interaction</em> | <em>EdTech</em></span>
-        </div>
-      </div>
+        <span class="dev-keywords">
+          <em>E-learning</em> | <em>FullStack Dev</em> | <em>Interaction</em> | <em>EdTech</em>
+        </span>
+      </aside>
     </div>
     <nav>
-      <ol class="main-menu">
-        <li><a href="" class="main-menu_link">Proyectos</a></li>
-        <li><a href="" class="main-menu_link">Experiencias</a></li>
-        <li><a href="" class="main-menu_link">Acerca</a></li>
-        <li><a href="" class="main-menu_link">Escríbeme</a></li>
-        <li><a href="" class="main-menu_link">Medios</a></li>
-      </ol>
+      <ul class="nav">
+        <li class="nav-item"><a href="#" class="nav-link" aria-role="navigation link" title="projects">Proyectos</a></li>
+        <li class="nav-item"><a href="#" class="nav-link" aria-role="navigation link" title="experiences">Experiencias</a></li>
+        <li class="nav-item"><a href="#" class="nav-link" aria-role="navigation link" title="about">Acerca</a></li>
+        <li class="nav-item"><a href="#" class="nav-link" aria-role="navigation link" title="contact me">Escríbeme</a></li>
+        <li class="nav-item"><a href="#" class="nav-link" aria-role="navigation link" title="media">Medios</a></li>
+      </ul>
     </nav>
   </header>
-  <div class="projects-container">
-      <section class="projects">
-        <!-- Projects here whith Client sice rendering -->
-      </section>
-      <div class="projects_more-button-container">
-        <a class="projects_more-button" href="#">I Want More</a>
+  <main class="main">
+    <section id="projects" class="projects">
+      <!-- Project's items with some Client Side Rendering -->
+    </section>
+      <div class="view-more-box">
+        <button class="view-more-button" title="View more button" aria-label="view more projects button">I Want More</a>
       </div>
-  </div>
+  </main>
   <script src="./js/index.js" defer></script>
 </body>
 </html>
