@@ -7,7 +7,7 @@
   <title>@davidherzlos, Developer</title>
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
   <link href="https://fonts.googleapis.com/css?family=K2D:300,400|Patua+One" rel="stylesheet">
-  <link rel="stylesheet" href="./css/app.css">
+  <link rel="stylesheet" href="./app.css">
 </head>
 <body>
   <header class="header">   
@@ -44,12 +44,17 @@
   </header>
   <main class="main">
     <section id="projects" class="projects">
-      <!-- Project's items with some Client Side Rendering -->
+      <!-- Projects widget -->
     </section>
       <div class="view-more-box">
-        <button class="view-more-button" title="View more button" aria-label="view more projects button">I Want More</a>
+        <button id="view-more" class="view-more-button" title="View more button" aria-label="view more projects button">I Want More</a>
       </div>
   </main>
-  <script src="./js/index.js" defer></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', async event => {
+      const { default: app } = await import('./app.js');
+      app.start();
+    });
+  </script>
 </body>
 </html>
