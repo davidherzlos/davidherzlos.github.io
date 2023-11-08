@@ -2,15 +2,16 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>@davidherzlos, Developer</title>
+  <title>@davidherzlos, Programmer</title>
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
   <link href="https://fonts.googleapis.com/css?family=K2D:300,400|Patua+One" rel="stylesheet">
   <link rel="stylesheet" href="./app.css">
+  <link rel="stylesheet" href="./tachyons.min.css">
 </head>
 <body>
-  <header class="header">   
+  <header class="header">
     <div class="logo">
       <div class="image-container">
         <a href="/" target="_top" rel="nofollow" aria-label="Home link">
@@ -33,7 +34,7 @@
       </aside>
     </div>
     <nav>
-      <ul class="nav">
+      <ul class="nav shadow-5-ns">
         <li class="nav-item"><a href="#" class="nav-link" aria-label="navigation link" title="projects">Proyectos</a></li>
         <li class="nav-item"><a href="#" class="nav-link" aria-label="navigation link" title="experiences">Experiencias</a></li>
         <li class="nav-item"><a href="#" class="nav-link" aria-label="navigation link" title="about">Acerca</a></li>
@@ -52,7 +53,7 @@
   </main>
   <script>
     document.addEventListener('DOMContentLoaded', async event => {
-      const { default: app } = await import('./app.js');
+      const { default: app } = await import('./src/app.js');
       app.start();
     });
   </script>
