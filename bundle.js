@@ -1,12 +1,12 @@
 const { spawn } = require('node:child_process');
 
-const builder = {};
+const bundler = {};
 
-builder.run =  () => {
-    builder._compileCss();
+bundler.run =  () => {
+    bundler._compileCss();
 };
 
-builder._compileCss = () => {
+bundler._compileCss = () => {
     console.log('Minifying the CSS.');
 
     const npmBuild = spawn('npm', ['run', 'build'], {
@@ -41,4 +41,4 @@ builder._compileCss = () => {
     });
 };
 
-builder.run();
+bundler.run();
