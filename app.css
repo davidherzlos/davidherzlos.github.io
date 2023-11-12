@@ -188,7 +188,7 @@ body {
   text-decoration: none;
 }
 .project:hover .project_info-wrapper { /* This is a good trick */
-  background: rgba(0, 0, 0, 0.700); 
+  background: rgba(0, 0, 0, 0.700);
   bottom: 0;
   opacity: 1;
 }
@@ -207,7 +207,7 @@ body {
   font-family: 'Patua One', cursive;
   font-size: 1.2em;
   cursor: pointer;
-  transition: all 500ms ease-in-out; 
+  transition: all 500ms ease-in-out;
 }
 
 /*------------------------------------*\
