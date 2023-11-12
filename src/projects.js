@@ -1,6 +1,8 @@
-import funcs from "./funcs.js";
+import funcs from "../lib/funcs.js";
 
-const data = [
+const projects = {};
+
+projects.data = [
   {
     'title': 'Instituto Rosario Castellanos',
     'description': 'Aula Virtual del Instituto de Estudios Superiores Rosario Castellanos. Uno de los proyectos educativos mas ambiciosos de la CDMX desde la creación de la Universidad Autónoma de la Ciudad de México',
@@ -66,45 +68,28 @@ const data = [
   }
 ];
 
-const template = project => {
-  return (`
-  <article class="project" aria-label="interactive flipping card on mouse over" aria-hidden="false">
-    <div class="project_link-container">
-      <h1 class="project_title">${project.title}</h1>
-      <figure class="project_image-wrapper">
-        <img class="project_image" src="${project.cover}" alt="${project.title}" title="${project.title}">
-        <figcaption class="project_info-wrapper" title="${project.title}">
-          <p class="project_info">${project.description}</p>
-          <div class="project-skills">
-            ${project.tags.map(tag => '<span>' + tag + '</span>').join('')}
-          </div>
-        </figcaption>
-      </figure>
-    </div>
-    <div class="project-button">
-      <a href="${project.url}" title="Go to project ${project.title}" rel="external">
-        View project <i class="fas fa-external-link-alt"></i>
-      </a>
-    </div>
-  </article>`)
-};
-
-const projects = {};
-
 projects.render = () => {
+  projects.getCallableTemplate('project-card').then(callableTemplate => {
+    const renderHTML = funcs.curried.renderHTML(callableTemplate);
+    const addToDOM = funcs.curried.addToDOM('#projects', 'beforeend');
+    const display = funcs.curried.display(renderHTML, addToDOM);
+    const iterator = funcs.createIterator(projects.data);
 
-  const renderHTML = funcs.curried.renderHTML(template);
-  const addToDOM = funcs.curried.addToDOM('#projects', 'beforeend');
-  const display = funcs.curried.display(renderHTML, addToDOM);
+    document.querySelector('#view-more').addEventListener('click', e => {
+      e.preventDefault();
+      display(funcs.getFromIterator(4, iterator));
+    });
 
-  const iterator = funcs.createIterator(data);
-  document.querySelector('#view-more').addEventListener('click', e => {
-    e.preventDefault();
     display(funcs.getFromIterator(4, iterator));
   });
+};
 
-  display(funcs.getFromIterator(4, iterator));
-
+projects.getCallableTemplate = template => {
+  return funcs.loadTemplate(template).then(templateFile => {
+    return project => {
+      return eval('`' + templateFile + '`');
+    };
+  });
 };
 
 export default projects;

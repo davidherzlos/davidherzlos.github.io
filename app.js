@@ -2,7 +2,7 @@
 * This just renders the projects page for now.
 */
 
-import projects from "./projects.js";
+import projects from "./src/projects.js";
 
 const app = {};
 
