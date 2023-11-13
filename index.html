@@ -11,50 +11,65 @@
   <link rel="stylesheet" href="./tachyons.min.css">
 </head>
 <body>
-  <header class="header">
-    <div class="logo">
-
-
-      <div class="image-container dn">
-        <a href="/" target="_top" rel="nofollow" aria-label="Home link">
-          <figure>
-            <img class="dev-picture" src="./static/me.png" alt="David's picture" title="David's picture">
-            <figcaption>Profile picture</figcaption>
-          </figure>
-        </a>
-        <a href="https://dev.to/davidherzlos" target="_blank" rel="external">
-          <img src="https://d2fltix0v2e0sb.cloudfront.net/dev-badge.svg" alt="David's dev.to profile" title="David's dev.to profile" height="30" width="30" />
-        </a>
+  <nav id="menu">
+    <span id="action">
+      <i class="fas fa-bars" data-toggle="open"></i>
+      <i class="fas fa-times dn" data-toggle="close"></i>
+    </span>
+    <div id="options" class="dn">
+      <div class="logo">
+        <div class="image-container">
+          <a href="/" target="_top" rel="nofollow" aria-label="Home link">
+            <figure>
+              <img class="dev-picture" src="./static/me.png" alt="David's picture" title="David's picture">
+              <figcaption>Profile picture</figcaption>
+            </figure>
+          </a>
+        </div>
       </div>
-
-
-      <aside class="dev-name">
-        <h1>
-          David Ordoñez
-        </h1>
-        <span class="dev-keywords">
-          <em>E-learning</em> | <em>FullStack Dev</em> | <em>Interaction</em> | <em>EdTech</em>
-        </span>
-      </aside>
-    </div>
-    <nav>
-      <ul class="nav shadow-5-ns dn">
-        <li class="nav-item"><a href="#" class="nav-link" aria-label="navigation link" title="projects">Proyectos</a></li>
-        <li class="nav-item"><a href="#" class="nav-link" aria-label="navigation link" title="experiences">Experiencias</a></li>
-        <li class="nav-item"><a href="#" class="nav-link" aria-label="navigation link" title="about">Acerca</a></li>
-        <li class="nav-item"><a href="#" class="nav-link" aria-label="navigation link" title="contact me">Escríbeme</a></li>
-        <li class="nav-item"><a href="#" class="nav-link" aria-label="navigation link" title="media">Medios</a></li>
+      <ul class="nav">
+        <li class="nav-item"><a href="#" class="nav-link" aria-label="navigation link" title="projects">Acerca de mi</a></li>
+        <li class="nav-item"><a href="#" class="nav-link" aria-label="navigation link" title="experiences">Proyectos</a></li>
+        <li class="nav-item"><a href="#" class="nav-link" aria-label="navigation link" title="about">Bitacora</a></li>
+        <li class="nav-item"><a href="#" class="nav-link" aria-label="navigation link" title="contact me">Contacto</a></li>
       </ul>
-    </nav>
-  </header>
-  <main class="main">
-    <section id="projects" class="projects">
-      <!-- Projects widget -->
-    </section>
-      <div class="view-more-box">
-        <button id="view-more" class="view-more-button" title="View more button" aria-label="view more projects button">I Want More</a>
+    </div>
+  </nav>
+  <div id="page">
+    <header class="header">
+      <div class="logo">
+        <div class="image-container">
+          <a href="/" target="_top" rel="nofollow" aria-label="Home link">
+            <figure>
+              <img class="dev-picture" src="./static/me.png" alt="David's picture" title="David's picture">
+              <figcaption>Profile picture</figcaption>
+            </figure>
+          </a>
+          <a href="https://dev.to/davidherzlos" target="_blank" rel="external">
+            <img src="https://d2fltix0v2e0sb.cloudfront.net/dev-badge.svg" alt="David's dev.to profile" title="David's dev.to profile" height="30" width="30" />
+          </a>
+        </div>
+
+
+        <aside class="dev-name">
+          <h1>
+            David Ordoñez
+          </h1>
+          <span class="dev-keywords">
+            <em>E-learning</em> | <em>FullStack Dev</em> | <em>Interaction</em> | <em>EdTech</em>
+          </span>
+        </aside>
       </div>
-  </main>
+    </header>
+    <main class="main">
+      <section id="projects" class="projects">
+        <!-- Projects widget -->
+      </section>
+        <div class="view-more-box">
+          <button id="view-more" class="view-more-button" title="View more button" aria-label="view more projects button">I Want More</a>
+        </div>
+    </main>
+  </div>
   <script>
     document.addEventListener('DOMContentLoaded', async event => {
       const { default: app } = await import('./app.js');
