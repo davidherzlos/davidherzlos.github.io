@@ -4,6 +4,7 @@ body {
   margin: 0;
   background: rgb(51, 51, 51);
   background: white;
+  height: 100%;
 }
 
 /* Header */
@@ -12,32 +13,30 @@ body {
   background: #e6cd76;
   background-image: url('../static/relief-header.svg');
   background-attachment: fixed;
+  padding-top: 3rem;
 }
-.header .logo .image-container {
-  padding: 3.125% 0;
-}
-.header .logo figure {
+.logo figure {
   margin: 0 auto;
-  width: 150px;
-  height: 150px;
+  width: 125px;
+  height: 125px;
   border-radius: 50%;
   overflow: hidden;
   display: flex;
   align-items: center;
 }
-.header .logo figure figcaption {
+.logo figure figcaption {
   display: none;
 }
-.header .logo .dev-picture {
+.logo .dev-picture {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
-.header .dev-name {
+.dev-name {
   background: #ffffff;
   padding-top: 1.5151515%;
 }
-.header .dev-name h1 {
+.dev-name h1 {
   margin: 0;
   padding: 3.125% 0;
   display: block;
@@ -50,40 +49,67 @@ body {
   font-weight: normal;
   text-align: center;
 }
-.header .dev-keywords {
+.dev-keywords {
   text-align: center;
   display: block;
   letter-spacing: 2px;
   font-family: sans;
   color: #D78D20;
 }
-.header .dev-keywords em {
+.dev-keywords em {
   font-size: 0.9375em;
   font-style: normal;
 }
 
-/* Main navigation */
-.header .nav {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-  text-align: center;
-  background: white;
+@media screen and (orientation:landscape) {
+  #menu .logo {
+    display: none;
+  }
 }
-.header .nav .nav-item {
-  height: 65px;
+
+/* Main navigation */
+#menu #action {
+  position: fixed;
+  z-index: 500;
+  width: 100vw;
+  display: flex;
+  height: fit-content;
+  justify-content: flex-end;
+  padding-top: 2rem;
+  padding-right: 2rem;
+  top: 0;
+  right: 0;
+}
+#menu #action i {
+  font-size: 1.5rem;
+}
+#menu #options {
+  position: fixed;
+  z-index: 400;
+  width: 100%;
+  background: white;
+  padding-top: 3rem;
+}
+#menu #options .nav {
+  padding: 0;
+  padding-top: 2rem;
+  list-style: none;
+  background: white;
+  display: grid;
+  place-items: center;
+  gap: 20px;
+}
+#menu .nav-item {
   box-sizing: border-box;
 }
-.header .nav .nav-item .nav-link {
-  height: 65px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.4375em;
+#menu .nav-link {
   text-decoration: none;
   font-family: 'Patua One', cursive;
-  color: #585561;
-  font-variant: small-caps;
+  color: #4F4F4F;
+  font-size: 1.4rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
 }
 
 /* Projects */
@@ -198,7 +224,6 @@ body {
 .main .view-more-box {
   text-align: center;
   padding: 40px;
-  margin-bottom: 900px;
 }
 .main .view-more-box .view-more-button {
   border: none;

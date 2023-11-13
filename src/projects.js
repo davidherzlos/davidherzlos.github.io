@@ -81,6 +81,29 @@ projects.render = () => {
     });
 
     display(funcs.getFromIterator(4, iterator));
+
+    document.querySelector('#action i:first-child').addEventListener('click', (e) => {
+      if (e.target.dataset.toggle == 'open') {
+        console.log('open');
+        e.target.style.display = 'none';
+        e.target.nextElementSibling.style.display = 'block';
+        document.querySelector('#menu #options').style.display = 'grid';
+        document.querySelector('#page').style.display = 'none';
+      }
+    });
+
+    document.querySelector('#action i:last-child').addEventListener('click', (e) => {
+      if (e.target.dataset.toggle == 'close') {
+        console.log('close');
+        e.target.style.display = 'none';
+        e.target.previousElementSibling.style.display = 'block';
+        document.querySelector('#menu #options').style.display = 'none';
+        document.querySelector('#page').style.display = 'block';
+      }
+    });
+
+
+
   });
 };
 
