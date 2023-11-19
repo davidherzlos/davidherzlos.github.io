@@ -108,7 +108,7 @@ projects.render = () => {
 };
 
 projects.getCallableTemplate = template => {
-  return funcs.loadTemplate(template).then(templateFile => {
+  return funcs.renderTemplate(template).then(templateFile => {
     return project => {
       return eval('`' + templateFile + '`');
     };
