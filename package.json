@@ -1,0 +1,24 @@
+{
+  "name": "portfolio",
+  "type": "module",
+  "version": "1.0.0",
+  "description": "This file is only to enable running some js files as ES6 modules.",
+  "main": "app.js",
+  "directories": {
+    "lib": "lib",
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/davidherzlos/davidherzlos.github.io.git"
+  },
+  "author": "David OC <davidherzlos@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/davidherzlos/davidherzlos.github.io/issues"
+  },
+  "homepage": "https://github.com/davidherzlos/davidherzlos.github.io#readme"
+}
