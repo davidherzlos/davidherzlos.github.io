@@ -3,7 +3,7 @@
   "type": "module",
   "version": "1.0.0",
   "description": "This file is only to enable running some js files as ES6 modules.",
-  "main": "app.js",
+  "main": "index.html",
   "directories": {
     "lib": "lib",
     "test": "tests"
