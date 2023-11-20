@@ -181,7 +181,6 @@
     transition: all 1s ease-in-out;
   }
   .project {
-    min-width: 300px;
     width: 25%;
     max-width: 400px;
     box-sizing: inherit;
